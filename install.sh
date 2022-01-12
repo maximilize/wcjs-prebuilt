@@ -30,8 +30,6 @@ else
 fi
 
 curl -sL "$url" >wcjs.zip
-mkdir -p node_modules/wcjs-prebuilt
-echo '{"name": "wcjs-prebuilt", version": "1.0.0", "main": "index.js"}' >./node_modules/wcjs-prebuilt/package.json
-echo 'module.exports = require((process.env.WCJS_TARGET || '.') + "/WebChimera.js.node");' >./node_modules/wcjs-prebuilt/index.js
-unzip -qq -o -d node_modules/wcjs-prebuilt/ wcjs.zip
+mkdir -p bin
+unzip -qq -o -d bin/ wcjs.zip
 rm wcjs.zip
